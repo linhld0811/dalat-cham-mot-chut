@@ -1,0 +1,24 @@
+/* Typography from https://tripora-wbs.webflow.io/.
+   Stack Sans Headline lacks some Vietnamese glyphs; Inter supplies those glyphs. */
+@font-face{font-family:'Stack Sans Headline';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/stack-sans-headline-regular.woff2') format('woff2')}
+@font-face{font-family:'Stack Sans Headline';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/stack-sans-headline-medium.woff2') format('woff2')}
+@font-face{font-family:'Stack Sans Headline';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/stack-sans-headline-semibold.woff2') format('woff2')}
+@font-face{font-family:'Stack Sans Headline';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/stack-sans-headline-bold.woff2') format('woff2')}
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-display-semibold.woff2') format('woff2')}
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/inter-display-bold.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:600;font-display:swap;src:url('assets/fonts/source-serif-4-semibold-italic.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:700;font-display:swap;src:url('assets/fonts/source-serif-4-bold-italic.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-vietnamese-regular.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/inter-vietnamese-medium.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-display-semibold.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/inter-display-bold.woff2') format('woff2')}
+:root{--serif:'Inter Display',Arial,sans-serif;--sans:'Stack Sans Headline','Inter',Arial,sans-serif;--accent-font:'Source Serif 4',Georgia,serif}
+body{font-family:var(--sans)}
+.hero h1,.section-heading h2,.stay-copy h2,.closing h2,.countdown-copy h2,.pack-group h3,.day-intro h3,.timeline-content h4,.aside-note h3,.last-note h3,dialog h3,.brand{font-family:var(--serif);font-weight:600}
+h1 em,h2 em,.journey-intro em,.small-stamp,.day-number{font-family:var(--accent-font);font-style:italic;font-weight:600}
+.journey-intro>div p{font-weight:600}
+.brand{letter-spacing:-.7px}
+.hero h1{letter-spacing:-2.5px;line-height:1.08}
+.hero h1 em{font-weight:600}
+.countdown-value{font-weight:600;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.brand{font-size:18px;letter-spacing:-.6px}.hero h1{letter-spacing:-1.7px}.countdown-copy h2{font-size:27px}}
