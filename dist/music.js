@@ -78,6 +78,11 @@ if (musicDisabled) {
 }
 
 const siteHeader = document.getElementById('site-header');
-function updateHeader() { siteHeader.classList.toggle('scrolled', window.scrollY > 35); }
+function updateHeader() {
+  const opening = document.querySelector('.opening-track');
+  const pinnedOpening = opening && document.documentElement.classList.contains('has-opening-motion');
+  const pastOpening = pinnedOpening ? opening.getBoundingClientRect().bottom <= window.innerHeight : true;
+  siteHeader.classList.toggle('scrolled', window.scrollY > 35 && pastOpening);
+}
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
