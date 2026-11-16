@@ -1,0 +1,55 @@
+/* Tripora's text roll + diagonal arrow swap, with the circle scaling to 0.8. */
+.motion-action{--motion-duration:.5s;--motion-ease:cubic-bezier(.22,1,.36,1);--motion-circle:40px;--motion-arrow:20px;--motion-travel:170%}
+.motion-label{display:inline-grid;grid-template-columns:minmax(0,1fr);overflow:hidden;vertical-align:middle;line-height:1.5;min-width:0}
+.motion-label>span{grid-area:1/1;display:block;transition:transform var(--motion-duration) var(--motion-ease);transform-origin:center}
+.motion-label-first{transform:translateY(0) scale(1)}
+.motion-label-copy{transform:translateY(115%) scale(.8);pointer-events:none;user-select:none}
+.motion-action .motion-icon{display:inline-grid;place-items:center;position:relative;overflow:hidden;isolation:isolate;flex:0 0 var(--motion-circle);width:var(--motion-circle);height:var(--motion-circle);padding:0;border:0;border-radius:50%;background:#fff;color:#173e34;vertical-align:middle;transition:transform var(--motion-duration) var(--motion-ease);transform:scale(1)}
+.motion-action .motion-icon .motion-arrow{position:absolute;display:block;width:var(--motion-arrow);height:var(--motion-arrow);padding:0;border:0;border-radius:0;background:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--motion-duration) var(--motion-ease);transform-origin:center}
+.motion-action .motion-arrow-first{transform:translate(0,0) scale(1)}
+.motion-action .motion-arrow-copy{transform:translate(calc(-1 * var(--motion-travel)),var(--motion-travel)) scale(1.2)}
+.primary-btn.motion-action,.outline-btn.motion-action,.closing a.motion-action{padding:6px 6px 6px 22px;gap:24px;border-radius:99px;text-decoration:none}
+.primary-btn.motion-action{--motion-circle:46px;--motion-arrow:23px}
+.outline-btn.motion-action{--motion-circle:36px;--motion-arrow:19px}
+.closing a.motion-action{--motion-circle:42px;--motion-arrow:20px}
+.primary-btn.motion-action:hover{transform:none}
+.nav-pack.motion-action{--motion-circle:32px;--motion-arrow:18px;gap:10px;padding:5px 5px 5px 14px}
+.nav-pack.motion-action>.motion-label,.nav-pack.motion-action>.motion-icon{display:inline-grid;padding-left:0}
+.trip-strip>a.motion-action .motion-icon{--motion-circle:30px;--motion-arrow:18px;margin-left:auto}
+.motion-inline{display:inline-flex;align-items:center;gap:7px;vertical-align:middle}
+.motion-inline .motion-icon{--motion-circle:22px;--motion-arrow:16px;background:transparent;color:inherit}
+.source-link.motion-inline{display:flex;width:fit-content;max-width:100%}
+.source-link.motion-inline .motion-label{overflow:clip}
+.map-link.motion-inline .motion-label{white-space:nowrap}
+.motion-inline .motion-label-first,.motion-inline .motion-label-copy{text-decoration:inherit;text-underline-offset:3px}
+.motion-action:focus-visible{outline:3px solid #ac794a;outline-offset:5px}
+@media (prefers-reduced-motion:no-preference){
+  .motion-action:focus-visible .motion-label-first,.motion-action.motion-touch .motion-label-first{transform:translateY(-115%) scale(.8)}
+  .motion-action:focus-visible .motion-label-copy,.motion-action.motion-touch .motion-label-copy{transform:translateY(0) scale(1)}
+  .motion-action:focus-visible .motion-arrow-first,.motion-action.motion-touch .motion-arrow-first{transform:translate(var(--motion-travel),calc(-1 * var(--motion-travel))) scale(.8)}
+  .motion-action:focus-visible .motion-arrow-copy,.motion-action.motion-touch .motion-arrow-copy{transform:translate(0,0) scale(1)}
+  .motion-action:focus-visible .motion-icon,.motion-action.motion-touch .motion-icon{transform:scale(.8)}
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .motion-action:hover .motion-label-first{transform:translateY(-115%) scale(.8)}
+  .motion-action:hover .motion-label-copy{transform:translateY(0) scale(1)}
+  .motion-action:hover .motion-arrow-first{transform:translate(var(--motion-travel),calc(-1 * var(--motion-travel))) scale(.8)}
+  .motion-action:hover .motion-arrow-copy{transform:translate(0,0) scale(1)}
+  .motion-action:hover .motion-icon{transform:scale(.8)}
+}
+@media(max-width:700px){
+  .hero .primary-btn.motion-action{--motion-circle:42px;--motion-arrow:21px;padding:5px 5px 5px 18px;gap:20px}
+  .nav-pack.motion-action{--motion-circle:28px;--motion-arrow:16px;padding:5px 5px 5px 11px;gap:8px}
+  .nav-pack.motion-action>svg{display:none}
+  .outline-btn.motion-action{--motion-circle:34px;padding:6px 6px 6px 16px;gap:18px}
+  .trip-strip>a.motion-action .motion-icon{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-action,.motion-action *{transition:none!important;animation:none!important}
+}
+@media print{
+  .motion-label{display:inline;overflow:visible}
+  .motion-label-first{transform:none!important}
+  .motion-label-copy,.motion-arrow-copy{display:none!important}
+  .motion-action .motion-icon{transform:none!important;background:transparent}
+}
