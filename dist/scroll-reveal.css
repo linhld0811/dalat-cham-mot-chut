@@ -1,0 +1,33 @@
+/* Progressive enhancement: content remains visible without JavaScript. */
+html.has-scroll-reveal .scroll-reveal{
+  opacity:0;translate:0 30px;
+  transition:none;
+}
+html.has-scroll-reveal .scroll-reveal[data-reveal="title"]{translate:0 36px;clip-path:inset(0 0 85% 0)}
+html.has-scroll-reveal .scroll-reveal[data-reveal="left"]{translate:-24px 18px}
+html.has-scroll-reveal .scroll-reveal[data-reveal="right"]{translate:24px 18px}
+html.has-scroll-reveal .scroll-reveal[data-reveal="image"]{translate:0 24px;clip-path:inset(9% 4% 9% 4% round 24px)}
+html.has-scroll-reveal .scroll-reveal[data-reveal="image"]>img{scale:1.07;transition:scale 1.2s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
+html.has-scroll-reveal .scroll-reveal.is-revealed{opacity:1;translate:0 0;
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),translate .95s cubic-bezier(.22,1,.36,1),clip-path 1s cubic-bezier(.22,1,.36,1),background-color .25s,border-color .25s,color .25s,transform .25s;
+  transition-delay:var(--reveal-delay,0ms),var(--reveal-delay,0ms),var(--reveal-delay,0ms),0ms,0ms,0ms,0ms;
+}
+html.has-scroll-reveal .scroll-reveal[data-reveal="title"].is-revealed{clip-path:inset(0 0 0 0)}
+html.has-scroll-reveal .scroll-reveal[data-reveal="image"].is-revealed{clip-path:inset(0 0 0 0 round 0)}
+html.has-scroll-reveal .scroll-reveal[data-reveal="image"].is-revealed>img{scale:1}
+/* Keyboard focus and in-page search never wait for an entrance animation. */
+html.has-scroll-reveal .scroll-reveal.reveal-immediate,
+html.has-scroll-reveal .scroll-reveal:focus-within{opacity:1;translate:0 0;clip-path:none;transition:none}
+@media(max-width:700px){
+  html.has-scroll-reveal .scroll-reveal{translate:0 23px}
+  html.has-scroll-reveal .scroll-reveal[data-reveal="title"]:not(.is-revealed){translate:0 28px}
+  html.has-scroll-reveal .scroll-reveal[data-reveal="left"]:not(.is-revealed),html.has-scroll-reveal .scroll-reveal[data-reveal="right"]:not(.is-revealed){translate:0 26px}
+}
+@media(prefers-reduced-motion:reduce){
+  html.has-scroll-reveal .scroll-reveal,html.has-scroll-reveal .scroll-reveal[data-reveal]{opacity:1;translate:none;clip-path:none;transition:none}
+  html.has-scroll-reveal .scroll-reveal[data-reveal="image"]>img{scale:1;transition:none}
+}
+@media print{
+  html.has-scroll-reveal .scroll-reveal,html.has-scroll-reveal .scroll-reveal[data-reveal]{opacity:1!important;translate:none!important;clip-path:none!important;transition:none!important}
+  html.has-scroll-reveal .scroll-reveal[data-reveal="image"]>img{scale:1!important;transition:none!important}
+}
