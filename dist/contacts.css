@@ -1,0 +1,12 @@
+.timeline-contacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.contact-call{display:inline-flex;align-items:center;gap:11px;max-width:100%;min-height:48px;padding:10px 14px;border:1px solid #173e3433;border-radius:8px;background:#173e3408;color:#173e34;text-decoration:none;vertical-align:middle;transition:background .2s,border-color .2s}
+.contact-call .call-symbol{font-size:22px;line-height:1;flex-shrink:0}
+.contact-call .call-label{display:block;font-size:13px;line-height:1.5;font-weight:400}
+.contact-call .call-number{display:block;font-size:17px;line-height:1.6;letter-spacing:.4px;font-weight:600;white-space:nowrap}
+.contact-call:hover{background:#173e3414;border-color:#173e3466}
+.contact-call:focus-visible{outline:3px solid #ac794a;outline-offset:4px}
+.stay-contact{margin:21px 0}
+.travel-reminder .contact-call{margin-top:13px}
+@media(max-width:700px){.contact-call{padding:10px 12px;gap:10px}.contact-call .call-label{font-size:13px}.contact-call .call-number{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.contact-call{transition:none}}
+@media print{.contact-call{padding:4px 8px;min-height:0;break-inside:avoid;background:none}.contact-call .call-label{font-size:9px}.contact-call .call-number{font-size:11px}.timeline-contacts{gap:7px;margin-top:8px}}

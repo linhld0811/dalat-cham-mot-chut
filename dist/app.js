@@ -3,7 +3,7 @@ const days = {
   arrival: {number:'↗',title:'Chạm ngõ thành phố sương',subtitle:'21.11 · Tối đến nơi, nhận phòng và nghỉ ngơi',items:[
     ['16:00','Có mặt tại sân bay Nội Bài','Gợi ý đến trước giờ bay 2 tiếng. Hoàn tất thủ tục, kiểm tra giấy tờ và hành lý.','Sân bay Nội Bài','Giờ có mặt gợi ý'],
     ['17:40','Hà Nội → Đà Lạt','Cất cánh từ HAN đến DLI theo giờ bạn cung cấp. Kiểm tra lại lịch bay trên vé trước ngày đi.','','Chưa có thông tin giờ hạ cánh'],
-    ['Khi đến','Xe sân bay → Be Youth The Villa','Đặt xe đón tại Liên Khương. Dự trù 60–75 phút từ lúc lên xe về villa, điều chỉnh theo giao thông.','Be Youth Villa 66 Bach Dang Da Lat','Báo villa nhận phòng muộn'],
+    ['Khi đến','Xe sân bay → Be Youth The Villa','Đặt xe đón tại Liên Khương. Dự trù 60–75 phút từ lúc lên xe về villa, điều chỉnh theo giao thông.','Be Youth Villa 66 Bach Dang Da Lat','Báo villa nhận phòng muộn',['lado','villa']],
     ['Buổi tối','Ăn nhẹ, rồi ngủ thật ngon','Chọn món nóng gần chỗ ở. Chốt xe đi Cầu Đất và giờ đón khách của điểm săn mây; soạn áo ấm, sạc điện thoại và đặt báo thức 03:45.','','Nghỉ sớm để sáng mai săn mây']
   ]},
   one:{number:'01',title:'Săn mây & một vòng phố',subtitle:'22.11 · Bình minh ở đồi chè Cầu Đất, chiều dạo phố bên hồ',items:[
@@ -11,7 +11,7 @@ const days = {
     ['04:15','Be Youth The Villa → Cầu Đất','Giờ khởi hành gợi ý. Dự trù 60–75 phút di chuyển; xác nhận giờ đón với tài xế theo tuyến đường và thời tiết thực tế.','Doi che Cau Dat Da Lat','Ưu tiên xe có tài xế cho chuyến đi sớm'],
     ['05:30','Săn mây đồi chè Cầu Đất','Ngắm bình minh và chụp ảnh tại điểm săn mây đã xác nhận đón khách sớm. Dành khoảng một giờ; nếu không có mây, tận hưởng nắng sớm và cảnh đồi chè.','Doi che Cau Dat Da Lat','Mây phụ thuộc thời tiết · xác nhận giờ mở cửa và phí'],
     ['07:00','Dạo đồi chè, ăn sáng & cà phê','Chụp hình giữa những luống chè tại khu vực được phép. Ăn sáng, uống đồ nóng ở quán đã mở cửa quanh Cầu Đất hoặc trên đường về.','Doi che Cau Dat Da Lat','Hỏi giá trước khi gọi món'],
-    ['08:30','Trở về villa, nghỉ ngơi một chút','Rời Cầu Đất về Be Youth The Villa. Dành phần còn lại của buổi sáng nghỉ bù sau chuyến săn mây; không xếp thêm điểm xa.','Be Youth Villa 66 Bach Dang Da Lat','Giờ về linh hoạt theo thời gian thực tế'],
+    ['08:30','Trở về villa, nghỉ ngơi một chút','Rời Cầu Đất về Be Youth The Villa. Dành phần còn lại của buổi sáng nghỉ bù sau chuyến săn mây; không xếp thêm điểm xa.','Be Youth Villa 66 Bach Dang Da Lat','Giờ về linh hoạt theo thời gian thực tế',['villa']],
     ['11:30','Bữa trưa & một giấc nghỉ nhỏ','Chọn cơm hoặc món nước ở trung tâm. Về villa nghỉ trước khi ra ngoài buổi chiều.','','Nghỉ khoảng 1–2 tiếng'],
     ['14:30','Dạo quanh Hồ Xuân Hương','Đi bộ một đoạn ven hồ, chụp hình, ngồi uống nước. Ghé khu vực Quảng trường Lâm Viên nếu còn thời gian.','Ho Xuan Huong Da Lat','Đi bộ nhẹ nhàng'],
     ['18:00','Một tối ngon lành ở phố núi','Ăn tối với lẩu gà hoặc món bạn thích. Sau đó dạo Chợ Đà Lạt, thử bánh tráng nướng và sữa đậu nành nóng.','Cho Da Lat','Hỏi giá trước khi gọi món'],
@@ -23,18 +23,23 @@ const days = {
     ['10:00','Hồ Tuyền Lâm, một khoảng xanh','Ngắm mặt hồ, đi dạo ở khu vực được phép và dừng uống cà phê. Không cần thêm hoạt động để có một buổi sáng đẹp.','Ho Tuyen Lam Da Lat','Lịch cơ bản không gồm SUP hay cáp treo'],
     ['12:00','Ăn trưa, trở về nghỉ','Ăn trưa trên đường về trung tâm. Dành đầu giờ chiều nghỉ tại villa.','','Tránh xếp lịch quá dày'],
     ['15:00','Cà phê & chọn chút quà mang về','Chọn quán gần trung tâm, mua cà phê, trà atisô hoặc mứt. Để trống thời gian cho điều bạn muốn làm thêm.','Cho Da Lat','Hỏi giá và kiểm tra đóng gói'],
-    ['18:00','Bữa tối cuối, hẹn lần sau','Ăn gần villa, về soạn hành lý và xác nhận xe sân bay. Chốt trả phòng sớm với lễ tân từ tối nay.','','Đặt xe đón khoảng 05:00 ngày mai']
+    ['18:00','Bữa tối cuối, hẹn lần sau','Ăn gần villa, về soạn hành lý và xác nhận xe sân bay. Chốt trả phòng sớm với lễ tân từ tối nay.','','Đặt xe đón khoảng 05:00 ngày mai',['lado','villa']]
   ]},
   home:{number:'↗',title:'Tạm biệt, hẹn gặp lại',subtitle:'24.11 · Về sớm, mang theo một vali kỷ niệm',items:[
-    ['05:30','Dậy sớm & kiểm tra đồ lần cuối','Kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân. Hoàn tất trả phòng theo thỏa thuận với villa.','','Đặt báo thức từ tối trước'],
-    ['06:30','Rời villa đi Liên Khương','Giờ xe đón gợi ý. Dự trù 60–75 phút di chuyển; xác nhận với tài xế theo tuyến đường và thời tiết.','San bay Lien Khuong','Đặt xe trước, tránh gọi xe sát giờ'],
+    ['05:30','Dậy sớm & kiểm tra đồ lần cuối','Kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân. Hoàn tất trả phòng theo thỏa thuận với villa.','','Đặt báo thức từ tối trước',['villa']],
+    ['06:30','Rời villa đi Liên Khương','Giờ xe đón gợi ý. Dự trù 60–75 phút di chuyển; xác nhận với tài xế theo tuyến đường và thời tiết.','San bay Lien Khuong','Đặt xe trước, tránh gọi xe sát giờ',['lado']],
     ['07:45','Có mặt tại sân bay DLI','Mục tiêu đến trước giờ cất cánh 2 tiếng. Làm thủ tục, gửi hành lý và vào cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
     ['08:20','Đà Lạt → Hà Nội','Giờ cất cánh theo thông tin bạn cung cấp. Điểm đến HAN được hiểu theo hành trình khứ hồi; đối chiếu lại vé.','','Hẹn Đà Lạt vào một ngày gần nhất']
   ]}
 };
 const panel = document.getElementById('day-panel');
 const tabs = [...document.querySelectorAll('[role="tab"]')];
-function dayHTML(day){return `<div class="day-intro"><span class="day-number">${day.number}</span><div><h3>${day.title}</h3><p>${day.subtitle}</p></div></div><div class="timeline">${day.items.map(([time,title,desc,map,tag])=>`<article class="timeline-item"><time class="timeline-time">${time}</time><div class="timeline-content"><h4>${title}${map?`<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(map)}" target="_blank" rel="noopener noreferrer" aria-label="Mở bản đồ: ${map}">Bản đồ ↗</a>`:''}</h4><p>${desc}</p>${tag?`<span class="timeline-tag">${tag}</span>`:''}</div></article>`).join('')}</div>`;}
+const tripContacts = {
+  lado: {name:'Lado Taxi sân bay', number:'19001111', display:'1900 1111'},
+  villa: {name:'Be Youth The Villa', number:'0868096138', display:'0868 096 138'}
+};
+function contactLink(key){const c=tripContacts[key];return `<a class="contact-call" href="tel:${c.number}" aria-label="Gọi ${c.name}: ${c.display}"><span class="call-symbol" aria-hidden="true">☎</span><span><span class="call-label">${c.name}</span><strong class="call-number">${c.display}</strong></span></a>`;}
+function dayHTML(day){return `<div class="day-intro"><span class="day-number">${day.number}</span><div><h3>${day.title}</h3><p>${day.subtitle}</p></div></div><div class="timeline">${day.items.map(([time,title,desc,map,tag,contacts=[]])=>`<article class="timeline-item"><time class="timeline-time">${time}</time><div class="timeline-content"><h4>${title}${map?`<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(map)}" target="_blank" rel="noopener noreferrer" aria-label="Mở bản đồ: ${map}">Bản đồ ↗</a>`:''}</h4><p>${desc}</p>${tag?`<span class="timeline-tag">${tag}</span>`:''}${contacts.length?`<div class="timeline-contacts">${contacts.map(contactLink).join('')}</div>`:''}</div></article>`).join('')}</div>`;}
 let currentDay = 'one';
 function selectDay(key, focus = false){currentDay=key;panel.innerHTML=dayHTML(days[key]);panel.setAttribute('aria-labelledby',`tab-${key}`);tabs.forEach(t=>{const active=t.dataset.day===key;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;if(active&&focus)t.focus();});}
 tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectDay(tab.dataset.day));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%tabs.length;if(event.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();selectDay(tabs[next].dataset.day,true);}});});
