@@ -1,0 +1,60 @@
+:root{--radius-card:28px;--radius-panel:22px;--radius-item:16px;--flower-color:#f1b497}
+
+/* Flower badges use decorative masks, leaving one readable label for assistive tech. */
+.eyebrow,.hero .eyebrow,.section-heading .eyebrow,.countdown-copy .eyebrow,.journey-intro>.eyebrow{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;width:fit-content;max-width:100%;
+  padding:7px 13px;border:1px dashed #173e3440;border-radius:999px;background:#fff7;
+  color:#294b3e;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:0;text-transform:none;
+}
+.eyebrow::before,.eyebrow::after{
+  content:'';display:block;flex:0 0 16px;width:16px;height:16px;background:var(--flower-color);
+  -webkit-mask:url('assets/flower.svg') center/contain no-repeat;
+  mask:url('assets/flower.svg') center/contain no-repeat;
+}
+.eyebrow>.tiny-line{display:none}
+.hero .eyebrow{color:#fff;background:#ffffff0c;border-color:#ffffff70;white-space:normal}
+.packing-section .section-heading .eyebrow{color:#fff3df;background:#ffffff08;border-color:#ffffff55}
+.journey-intro>.eyebrow{margin-top:7px;align-self:start;justify-self:start}
+
+.trip-countdown{border:1px solid #173e3424;border-radius:var(--radius-card)}
+.countdown-value{border-radius:12px}
+.day-tabs{gap:12px;border:0}
+.day-tabs button{border:1px solid #173e3429;border-radius:var(--radius-item);padding:20px 16px}
+.day-tabs button[aria-selected=true]{border-color:#dd7145;background:#fff9ef}
+.itinerary-layout{border-radius:var(--radius-card)}
+.aside-photo,.aside-note{border-radius:var(--radius-panel)}
+.boarding-pass{border-radius:var(--radius-card)}
+.travel-reminder{border-radius:var(--radius-item)}
+.stay-section{border-radius:var(--radius-card);overflow:hidden}
+.packing-status{border-radius:var(--radius-panel)}
+.pack-group{border:1px solid #ffffff29;border-radius:var(--radius-panel);padding:25px 23px;background:#ffffff04}
+.last-note{border:1px solid #ffffff26;border-radius:var(--radius-panel);padding:24px}
+.timeline-tag{border-radius:999px;padding-inline:11px}
+.contact-call{border-radius:var(--radius-item)}
+.check-row input{border-radius:6px}
+dialog{border-radius:var(--radius-panel)}
+.toast{border-radius:var(--radius-item)}
+
+@media(max-width:1100px) and (min-width:701px){
+  .day-tabs{gap:10px}
+  .day-tabs button{padding:18px 12px}
+  .pack-group{padding:24px 22px}
+}
+@media(max-width:700px){
+  :root{--radius-card:24px;--radius-panel:20px;--radius-item:14px}
+  .eyebrow,.hero .eyebrow,.section-heading .eyebrow,.countdown-copy .eyebrow,.journey-intro>.eyebrow{font-size:12px;gap:8px;padding:7px 11px;letter-spacing:0}
+  .eyebrow::before,.eyebrow::after{flex-basis:15px;width:15px;height:15px}
+  .journey-intro>.eyebrow{display:inline-flex;margin-top:0}
+  .countdown-copy .eyebrow{margin-inline:auto}
+  .day-tabs{gap:10px}
+  .day-tabs button{padding:16px 13px}
+  .itinerary-layout{padding:25px 17px}
+  .pack-group{padding:25px 22px}
+  .last-note{padding:22px 18px}
+  .timeline-tag{border-radius:14px}
+}
+@media print{
+  .eyebrow,.section-heading .eyebrow{background:none;border-color:#bbb;font-size:9px;padding:4px 9px}
+  .eyebrow::before,.eyebrow::after{flex-basis:11px;width:11px;height:11px;background:#777}
+  .pack-group,.last-note{border-color:#ccc;background:none;padding:14px}
+}
