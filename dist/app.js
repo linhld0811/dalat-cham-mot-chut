@@ -4,11 +4,14 @@ const days = {
     ['16:00','Có mặt tại sân bay Nội Bài','Gợi ý đến trước giờ bay 2 tiếng. Hoàn tất thủ tục, kiểm tra giấy tờ và hành lý.','Sân bay Nội Bài','Giờ có mặt gợi ý'],
     ['17:40','Hà Nội → Đà Lạt','Cất cánh từ HAN đến DLI theo giờ bạn cung cấp. Kiểm tra lại lịch bay trên vé trước ngày đi.','','Chưa có thông tin giờ hạ cánh'],
     ['Khi đến','Xe sân bay → Be Youth The Villa','Đặt xe đón tại Liên Khương. Dự trù 60–75 phút từ lúc lên xe về villa, điều chỉnh theo giao thông.','Be Youth Villa 66 Bach Dang Da Lat','Báo villa nhận phòng muộn'],
-    ['Buổi tối','Ăn nhẹ, rồi ngủ thật ngon','Chọn món nóng gần chỗ ở. Sắp đồ cho ngày mai, sạc điện thoại và dành sức cho hai ngày khám phá.','','Điều chỉnh theo giờ hạ cánh']
+    ['Buổi tối','Ăn nhẹ, rồi ngủ thật ngon','Chọn món nóng gần chỗ ở. Chốt xe đi Cầu Đất và giờ đón khách của điểm săn mây; soạn áo ấm, sạc điện thoại và đặt báo thức 03:45.','','Nghỉ sớm để sáng mai săn mây']
   ]},
-  one:{number:'01',title:'Một vòng phố nhỏ',subtitle:'22.11 · Cà phê, kiến trúc và những con đường ven hồ',items:[
-    ['07:30','Chào buổi sáng bằng bánh mì xíu mại','Ăn sáng gần villa, khoác thêm áo ấm rồi bắt đầu ngày mới thật chậm.','','Bữa sáng'],
-    ['09:00','Domaine de Marie & cà phê','Ghé nhà thờ, ngắm kiến trúc và chụp vài tấm ảnh. Sau đó tìm một quán cà phê trên đường về trung tâm.','Domaine de Marie Da Lat','Trang phục lịch sự · tôn trọng giờ lễ'],
+  one:{number:'01',title:'Săn mây & một vòng phố',subtitle:'22.11 · Bình minh ở đồi chè Cầu Đất, chiều dạo phố bên hồ',items:[
+    ['03:45','Dậy sớm, chuẩn bị đi săn mây','Mặc áo khoác ấm, mang khăn, giày có độ bám, nước uống và điện thoại đủ pin. Ăn nhẹ trước khi lên xe.','','Chốt xe và giờ mở cửa từ tối trước'],
+    ['04:15','Be Youth The Villa → Cầu Đất','Giờ khởi hành gợi ý. Dự trù 60–75 phút di chuyển; xác nhận giờ đón với tài xế theo tuyến đường và thời tiết thực tế.','Doi che Cau Dat Da Lat','Ưu tiên xe có tài xế cho chuyến đi sớm'],
+    ['05:30','Săn mây đồi chè Cầu Đất','Ngắm bình minh và chụp ảnh tại điểm săn mây đã xác nhận đón khách sớm. Dành khoảng một giờ; nếu không có mây, tận hưởng nắng sớm và cảnh đồi chè.','Doi che Cau Dat Da Lat','Mây phụ thuộc thời tiết · xác nhận giờ mở cửa và phí'],
+    ['07:00','Dạo đồi chè, ăn sáng & cà phê','Chụp hình giữa những luống chè tại khu vực được phép. Ăn sáng, uống đồ nóng ở quán đã mở cửa quanh Cầu Đất hoặc trên đường về.','Doi che Cau Dat Da Lat','Hỏi giá trước khi gọi món'],
+    ['08:30','Trở về villa, nghỉ ngơi một chút','Rời Cầu Đất về Be Youth The Villa. Dành phần còn lại của buổi sáng nghỉ bù sau chuyến săn mây; không xếp thêm điểm xa.','Be Youth Villa 66 Bach Dang Da Lat','Giờ về linh hoạt theo thời gian thực tế'],
     ['11:30','Bữa trưa & một giấc nghỉ nhỏ','Chọn cơm hoặc món nước ở trung tâm. Về villa nghỉ trước khi ra ngoài buổi chiều.','','Nghỉ khoảng 1–2 tiếng'],
     ['14:30','Dạo quanh Hồ Xuân Hương','Đi bộ một đoạn ven hồ, chụp hình, ngồi uống nước. Ghé khu vực Quảng trường Lâm Viên nếu còn thời gian.','Ho Xuan Huong Da Lat','Đi bộ nhẹ nhàng'],
     ['18:00','Một tối ngon lành ở phố núi','Ăn tối với lẩu gà hoặc món bạn thích. Sau đó dạo Chợ Đà Lạt, thử bánh tráng nướng và sữa đậu nành nóng.','Cho Da Lat','Hỏi giá trước khi gọi món'],
