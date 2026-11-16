@@ -1,6 +1,6 @@
 /* Tripora's text roll + diagonal arrow swap, with the circle scaling to 0.8. */
-.motion-action{--motion-duration:.5s;--motion-ease:cubic-bezier(.22,1,.36,1);--motion-circle:40px;--motion-arrow:20px;--motion-travel:170%}
-.motion-label{display:inline-grid;grid-template-columns:minmax(0,1fr);overflow:hidden;vertical-align:middle;line-height:1.5;min-width:0}
+.motion-action{--motion-duration:.5s;--motion-ease:cubic-bezier(.22,1,.36,1);--motion-circle:40px;--motion-arrow:20px;--motion-travel:170%;align-items:center}
+.motion-label{display:inline-grid;grid-template-columns:minmax(0,1fr);overflow:hidden;vertical-align:middle;align-self:center;line-height:1.5;min-width:0}
 .motion-label>span{grid-area:1/1;display:block;transition:transform var(--motion-duration) var(--motion-ease);transform-origin:center}
 .motion-label-first{transform:translateY(0) scale(1)}
 .motion-label-copy{transform:translateY(115%) scale(.8);pointer-events:none;user-select:none}
