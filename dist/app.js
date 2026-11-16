@@ -1,7 +1,7 @@
 'use strict';
 const days = {
   arrival: {number:'↗',title:'Chạm ngõ thành phố sương',subtitle:'21.11 · Tối đến nơi, nhận phòng và nghỉ ngơi',items:[
-    ['15:40','Có mặt tại sân bay Nội Bài','Gợi ý đến trước giờ bay 2 tiếng. Hoàn tất thủ tục, kiểm tra giấy tờ và hành lý.','Sân bay Nội Bài','Giờ có mặt gợi ý'],
+    ['16:00','Có mặt tại sân bay Nội Bài','Gợi ý đến trước giờ bay 2 tiếng. Hoàn tất thủ tục, kiểm tra giấy tờ và hành lý.','Sân bay Nội Bài','Giờ có mặt gợi ý'],
     ['17:40','Hà Nội → Đà Lạt','Cất cánh từ HAN đến DLI theo giờ bạn cung cấp. Kiểm tra lại lịch bay trên vé trước ngày đi.','','Chưa có thông tin giờ hạ cánh'],
     ['Khi đến','Xe sân bay → Be Youth The Villa','Đặt xe đón tại Liên Khương. Dự trù 60–75 phút từ lúc lên xe về villa, điều chỉnh theo giao thông.','Be Youth Villa 66 Bach Dang Da Lat','Báo villa nhận phòng muộn'],
     ['Buổi tối','Ăn nhẹ, rồi ngủ thật ngon','Chọn món nóng gần chỗ ở. Sắp đồ cho ngày mai, sạc điện thoại và dành sức cho hai ngày khám phá.','','Điều chỉnh theo giờ hạ cánh']
@@ -23,10 +23,10 @@ const days = {
     ['18:00','Bữa tối cuối, hẹn lần sau','Ăn gần villa, về soạn hành lý và xác nhận xe sân bay. Chốt trả phòng sớm với lễ tân từ tối nay.','','Đặt xe đón khoảng 05:00 ngày mai']
   ]},
   home:{number:'↗',title:'Tạm biệt, hẹn gặp lại',subtitle:'24.11 · Về sớm, mang theo một vali kỷ niệm',items:[
-    ['04:30','Dậy sớm & kiểm tra đồ lần cuối','Kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân. Hoàn tất trả phòng theo thỏa thuận với villa.','','Đặt báo thức từ tối trước'],
-    ['05:00','Rời villa đi Liên Khương','Giờ xe đón gợi ý. Dự trù 60–75 phút di chuyển; xác nhận với tài xế theo tuyến đường và thời tiết.','San bay Lien Khuong','Đặt xe trước, tránh gọi xe sát giờ'],
-    ['06:10','Có mặt tại sân bay DLI','Mục tiêu đến trước giờ cất cánh 2 tiếng. Làm thủ tục, gửi hành lý và vào cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
-    ['08:10','Đà Lạt → Hà Nội','Giờ cất cánh theo thông tin bạn cung cấp. Điểm đến HAN được hiểu theo hành trình khứ hồi; đối chiếu lại vé.','','Hẹn Đà Lạt vào một ngày gần nhất']
+    ['05:30','Dậy sớm & kiểm tra đồ lần cuối','Kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân. Hoàn tất trả phòng theo thỏa thuận với villa.','','Đặt báo thức từ tối trước'],
+    ['06:30','Rời villa đi Liên Khương','Giờ xe đón gợi ý. Dự trù 60–75 phút di chuyển; xác nhận với tài xế theo tuyến đường và thời tiết.','San bay Lien Khuong','Đặt xe trước, tránh gọi xe sát giờ'],
+    ['07:45','Có mặt tại sân bay DLI','Mục tiêu đến trước giờ cất cánh 2 tiếng. Làm thủ tục, gửi hành lý và vào cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
+    ['08:20','Đà Lạt → Hà Nội','Giờ cất cánh theo thông tin bạn cung cấp. Điểm đến HAN được hiểu theo hành trình khứ hồi; đối chiếu lại vé.','','Hẹn Đà Lạt vào một ngày gần nhất']
   ]}
 };
 const panel = document.getElementById('day-panel');
