@@ -2,16 +2,35 @@
   if (!('IntersectionObserver' in window)) return;
   const root = document.documentElement;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const registered = new WeakSet();
-  const pending = new Set();
+  const registered = new Set();
+  const resetBuffer = 96;
   let observer;
+  let resetObserver;
   let printing = false;
 
   function show(element, immediate = false) {
     if (immediate) element.classList.add('reveal-immediate');
     element.classList.add('is-revealed');
-    pending.delete(element);
-    observer?.unobserve(element);
+  }
+
+  function reset(element) {
+    if (printing || reducedMotion.matches || element.contains(document.activeElement)) return;
+    element.classList.remove('is-revealed', 'reveal-immediate');
+  }
+
+  function resetIfOutside(element) {
+    const rect = element.getBoundingClientRect();
+    if (rect.bottom < -resetBuffer || rect.top > innerHeight + resetBuffer) reset(element);
+  }
+
+  function removeDetached() {
+    registered.forEach(element => {
+      if (!element.isConnected) {
+        observer?.unobserve(element);
+        resetObserver?.unobserve(element);
+        registered.delete(element);
+      }
+    });
   }
 
   function register(element, variant = 'up', delay = 0) {
@@ -24,13 +43,8 @@
       show(element, true);
       return;
     }
-    // A restored page or a direct anchor may have already passed some content.
-    if (element.getBoundingClientRect().bottom < 0) {
-      show(element, true);
-      return;
-    }
-    pending.add(element);
     observer.observe(element);
+    resetObserver.observe(element);
   }
 
   function group(selector, variant = 'up', step = 70, scope = document) {
@@ -40,9 +54,7 @@
   }
 
   function registerDay() {
-    pending.forEach(element => {
-      if (!element.isConnected) { observer?.unobserve(element); pending.delete(element); }
-    });
+    removeDetached();
     const panel = document.getElementById('day-panel');
     if (!panel) return;
     group('.day-intro', 'up', 0, panel);
@@ -75,26 +87,42 @@
 
   function configure() {
     observer?.disconnect();
+    resetObserver?.disconnect();
+    removeDetached();
     if (reducedMotion.matches || printing) {
-      pending.forEach(element => show(element, true));
+      registered.forEach(element => show(element, true));
       root.classList.remove('has-scroll-reveal');
       return;
     }
+    // Keep observing after entry so the same animation works in either direction.
     observer = new IntersectionObserver(entries => {
       for (const entry of entries) {
         if (entry.isIntersecting) show(entry.target);
-        else if (entry.boundingClientRect.bottom < 0) show(entry.target, true);
       }
     }, { rootMargin: '0px 0px -48px 0px', threshold: .04 });
+    // Reset beyond the viewport, not at its edge: this avoids flicker when
+    // changing scroll direction and leaves focused controls readable.
+    resetObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) resetIfOutside(entry.target);
+      }
+    }, { rootMargin: `${resetBuffer}px 0px`, threshold: 0 });
     root.classList.add('has-scroll-reveal');
     registerPage();
-    pending.forEach(element => observer.observe(element));
+    registered.forEach(element => {
+      observer.observe(element);
+      resetObserver.observe(element);
+    });
   }
 
   // Reveal focused controls immediately without altering their tab order or semantics.
   document.addEventListener('focusin', event => {
     const element = event.target.closest('.scroll-reveal');
     if (element) show(element, true);
+  });
+  document.addEventListener('focusout', event => {
+    const element = event.target.closest('.scroll-reveal');
+    if (element) requestAnimationFrame(() => resetIfOutside(element));
   });
   window.addEventListener('beforeprint', () => { printing = true; configure(); });
   window.addEventListener('afterprint', () => { printing = false; configure(); });
@@ -113,6 +141,7 @@
   } catch {
     // Animation failure must never prevent someone from reading their itinerary.
     observer?.disconnect();
+    resetObserver?.disconnect();
     root.classList.remove('has-scroll-reveal');
   }
 })();
