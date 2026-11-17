@@ -73,7 +73,15 @@ const tripContacts = {
 };
 function contactLink(key){const c=tripContacts[key];return `<a class="contact-call" href="tel:${c.number}" aria-label="Gọi ${c.name}: ${c.display}"><span class="call-symbol" aria-hidden="true">☎</span><span><span class="call-label">${c.name}</span><strong class="call-number">${c.display}</strong></span></a>`;}
 function dayHTML(day){return `<div class="day-intro"><span class="day-number">${day.number}</span><div><h3>${day.title}</h3><p>${day.subtitle}</p></div></div><div class="timeline">${day.items.map(([time,title,desc,map,tag,contacts=[]])=>`<article class="timeline-item"><time class="timeline-time">${time}</time><div class="timeline-content"><h4>${title}${map?`<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(map)}" target="_blank" rel="noopener noreferrer" aria-label="Mở bản đồ: ${map}">Dẫn đường ↗</a>`:''}</h4><p>${desc}</p>${tag?`<span class="timeline-tag">${tag}</span>`:''}${contacts.length?`<div class="timeline-contacts">${contacts.map(contactLink).join('')}</div>`:''}</div></article>`).join('')}</div>`;}
-let currentDay = 'one';
+function itineraryDayFor(date=new Date()){
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date).filter(({type})=>type!=='literal').map(({type,value})=>[type,value]));
+  const today=Number(`${parts.year}${parts.month}${parts.day}`);
+  if(today<20261122)return 'arrival';
+  if(today===20261122)return 'one';
+  if(today===20261123)return 'two';
+  return 'home';
+}
+let currentDay = itineraryDayFor();
 function updateDayVisual(key){
   const visual=dayVisuals[key];
   dayPhoto.src=visual.src;
