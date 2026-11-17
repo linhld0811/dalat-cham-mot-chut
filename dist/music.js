@@ -14,7 +14,7 @@ function updateMusicButton(isPlaying) {
   musicToggle.classList.toggle('is-playing', isPlaying);
   musicToggle.setAttribute('aria-pressed', String(isPlaying));
   musicToggle.setAttribute('aria-label', isPlaying ? 'Tắt nhạc' : 'Phát nhạc cho cuộc hẹn');
-  musicLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc đôi mình';
+  musicLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc';
 }
 function clearMusicInteraction() {
   document.removeEventListener('pointerdown', startMusicAfterInteraction);

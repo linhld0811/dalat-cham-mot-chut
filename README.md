@@ -4,16 +4,6 @@ Website lịch trình Đà Lạt 21–24/11/2026, viết bằng HTML, CSS và Ja
 
 Website: https://linhld0811.github.io/dalat-cham-mot-chut/
 
-## Cập nhật website public
-
-Chỉnh nội dung trong `dist/`, sau đó chạy trong thư mục project:
-
-```bash
-git add dist/
-git commit -m "Update trip information"
-git push origin main
-```
-
 GitHub Actions tự deploy nội dung `dist/` lên GitHub Pages sau khi push lên `main`. Không cần chạy build.
 
 Xem tiến độ và đường dẫn deploy ở [Actions](https://github.com/linhld0811/dalat-cham-mot-chut/actions/workflows/deploy-pages.yml).

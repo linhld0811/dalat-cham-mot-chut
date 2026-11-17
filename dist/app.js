@@ -27,12 +27,12 @@ const days = {
     ['16:30','Chở nhau về phía hoàng hôn','Đi theo hướng Trại Mát đến Tiệm nướng Xóm Lèo. Mình đi sớm một chút để kịp nhìn trời đổi màu trước bữa tối.','Tiệm Nướng và Chill Xóm Lèo 113 Huỳnh Tấn Phát Đà Lạt','Đường dốc, mình cứ chậm rãi khi trời tối'],
     ['17:00','Bữa tối giữa thung lũng lên đèn','Cùng ăn nướng, ngắm hoàng hôn và những ánh đèn dần sáng. Dành khoảng 2–2,5 tiếng; nên đặt trước một chiếc bàn có view.','Tiệm Nướng và Chill Xóm Lèo 113 Huỳnh Tấn Phát Đà Lạt','Mình tự lái xe nên không uống rượu bia'],
     ['19:45','Vì Yêu Mà Đến — mình cũng vậy','Từ Xóm Lèo, hai đứa ghé quán ở 678 Hùng Vương, gọi hai món mình thích rồi ngồi cạnh nhau ngắm Đà Lạt về đêm.','Vì Yêu Mà Đến Coffee 678 Hùng Vương Đà Lạt','Mang áo ấm; đường tối có thể có sương'],
-    ['21:30','Về căn phòng nhỏ, cất chuyến đi vào vali','Chở nhau về villa, đổ xăng nếu cần và bàn giao xe theo thỏa thuận. Cùng soạn hành lý, xác nhận xe sân bay và chốt giờ trả phòng.','','Đặt xe sân bay đón khoảng 05:00',['lado','villa']]
+    ['21:30','Về căn phòng nhỏ, cất chuyến đi vào vali','Chở nhau về villa, đổ xăng nếu cần và bàn giao xe theo thỏa thuận. Cùng soạn hành lý, xác nhận xe sân bay và chốt giờ trả phòng.','','Đặt xe sân bay đón khoảng 06:00',['lado','villa']]
   ]},
   home:{number:'↗',title:'Mang Đà Lạt về cùng nhau',subtitle:'24.11 · Về sớm, vali đầy quà và tim đầy kỷ niệm',items:[
-    ['04:30','Dậy thật khẽ, kiểm tra đồ lần cuối','Cùng kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân rồi hoàn tất trả phòng với villa.','','Đặt báo thức từ tối trước',['villa']],
-    ['05:00','Hai đứa rời villa đi Liên Khương','Lên ô tô đã đặt trước, dự trù 60–75 phút di chuyển. Nhớ xác nhận lại với tài xế theo đường và thời tiết thực tế.','San bay Lien Khuong','Chặng sân bay mình đi ô tô',['lado']],
-    ['06:15','Cùng nhau vào sân bay DLI','Có mặt trước giờ cất cánh khoảng 2 tiếng để thong thả làm thủ tục, gửi hành lý và qua cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
+    ['05:30','Dậy thật khẽ, kiểm tra đồ lần cuối','Cùng kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân rồi hoàn tất trả phòng với villa.','','Đặt báo thức từ tối trước',['villa']],
+    ['06:00','Hai đứa rời villa đi Liên Khương','Lên ô tô đã đặt trước, dự trù 60–75 phút di chuyển. Nhớ xác nhận lại với tài xế theo đường và thời tiết thực tế.','San bay Lien Khuong','Chặng sân bay mình đi ô tô',['lado']],
+    ['07:15','Cùng nhau vào sân bay DLI','Có mặt trước giờ cất cánh khoảng 2 tiếng để thong thả làm thủ tục, gửi hành lý và qua cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
     ['08:20','Đà Lạt → Hà Nội, mình vẫn cạnh nhau','Hai đứa bay cùng Vietjet Air về Hà Nội. Chuyến đi khép lại, còn câu chuyện của hai đứa thì vẫn dài thật dài.','','Hẹn Đà Lạt vào một ngày mình lại muốn trốn đi cùng nhau']
   ]}
 };
