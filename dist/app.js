@@ -2,7 +2,7 @@
 const days = {
   arrival: {number:'↗',title:'Mình gặp Đà Lạt rồi này',subtitle:'21.11 · Tối đến nơi, cùng nhau về căn phòng nhỏ',items:[
     ['16:00','Hai đứa có mặt tại Nội Bài','Mình đến sớm 2 tiếng để thong thả làm thủ tục, kiểm tra giấy tờ và hành lý trước khi cuộc hẹn bắt đầu.','Sân bay Nội Bài','17h00'],
-    ['17:40','Mình bay về phía Đà Lạt','Cất cánh từ HAN đến DLI. Nhớ kiểm tra lại vé trước ngày đi để hai đứa không lỡ cuộc hẹn nhé.','','19h35'],
+    ['17:40','Mình bay về phía Đà Lạt','Cất cánh cùng Vietnam Airlines từ HAN đến DLI. Nhớ kiểm tra lại vé trước ngày đi để hai đứa không lỡ cuộc hẹn nhé.','','19h35'],
     ['20:15','Cùng về căn phòng nhỏ','Xe đón hai đứa tại Liên Khương sau khi lấy hành lý. Dự trù 60–75 phút để về Be Youth The Villa.','Be Youth Villa 66 Bach Dang Da Lat','Báo villa nhận phòng muộn',['lado','villa']],
     ['Buổi tối','Ăn nhẹ, nhận xe rồi ngủ ngoan','Nhận xe tại villa; cùng kiểm tra phanh, đèn, lốp, xăng, giấy tờ và hai mũ bảo hiểm. Soạn áo ấm, sạc điện thoại, xem trước đường Cầu Đất rồi đặt báo thức 03:45.','','Ngủ sớm để mai mình cùng đón bình minh']
   ]},
@@ -33,7 +33,7 @@ const days = {
     ['04:30','Dậy thật khẽ, kiểm tra đồ lần cuối','Cùng kiểm tra giấy tờ, điện thoại, sạc và đồ cá nhân rồi hoàn tất trả phòng với villa.','','Đặt báo thức từ tối trước',['villa']],
     ['05:00','Hai đứa rời villa đi Liên Khương','Lên ô tô đã đặt trước, dự trù 60–75 phút di chuyển. Nhớ xác nhận lại với tài xế theo đường và thời tiết thực tế.','San bay Lien Khuong','Chặng sân bay mình đi ô tô',['lado']],
     ['06:15','Cùng nhau vào sân bay DLI','Có mặt trước giờ cất cánh khoảng 2 tiếng để thong thả làm thủ tục, gửi hành lý và qua cửa an ninh.','','Kiểm tra lại giờ bay trên vé'],
-    ['08:20','Đà Lạt → Hà Nội, mình vẫn cạnh nhau','Tạm biệt thành phố ngàn thông. Chuyến đi khép lại, còn câu chuyện của hai đứa thì vẫn dài thật dài.','','Hẹn Đà Lạt vào một ngày mình lại muốn trốn đi cùng nhau']
+    ['08:20','Đà Lạt → Hà Nội, mình vẫn cạnh nhau','Hai đứa bay cùng Vietjet Air về Hà Nội. Chuyến đi khép lại, còn câu chuyện của hai đứa thì vẫn dài thật dài.','','Hẹn Đà Lạt vào một ngày mình lại muốn trốn đi cùng nhau']
   ]}
 };
 const dayVisuals = {
