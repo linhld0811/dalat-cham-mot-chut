@@ -13,8 +13,8 @@ backgroundMusic.autoplay = !musicDisabled;
 function updateMusicButton(isPlaying) {
   musicToggle.classList.toggle('is-playing', isPlaying);
   musicToggle.setAttribute('aria-pressed', String(isPlaying));
-  musicToggle.setAttribute('aria-label', isPlaying ? 'Tắt nhạc' : 'Phát nhạc cho chuyến đi');
-  musicLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc';
+  musicToggle.setAttribute('aria-label', isPlaying ? 'Tắt nhạc' : 'Phát nhạc cho cuộc hẹn');
+  musicLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc đôi mình';
 }
 function clearMusicInteraction() {
   document.removeEventListener('pointerdown', startMusicAfterInteraction);
@@ -35,7 +35,7 @@ async function playTripMusic() {
     updateMusicButton(false);
     if (error.name !== 'NotAllowedError' && error.name !== 'AbortError') {
       clearMusicInteraction();
-      showToast('Không thể tải tệp nhạc. Bạn thử bật lại nhé.');
+      showToast('Bản nhạc của hai đứa chưa phát được. Mình thử lại nhé.');
     }
   } finally {
     musicPending = false;
@@ -54,7 +54,7 @@ backgroundMusic.addEventListener('pause', () => updateMusicButton(false));
 backgroundMusic.addEventListener('error', () => {
   updateMusicButton(false);
   clearMusicInteraction();
-  showToast('Không thể tải tệp nhạc. Bạn thử bật lại nhé.');
+  showToast('Bản nhạc của hai đứa chưa phát được. Mình thử lại nhé.');
 });
 musicToggle.addEventListener('click', () => {
   if (!backgroundMusic.paused || musicPending) {

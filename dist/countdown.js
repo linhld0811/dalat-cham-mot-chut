@@ -32,14 +32,14 @@
     if (remaining === 0) {
       if (!finished) {
         countdown.classList.add('is-departure-time');
-        title.textContent = 'Đến giờ đi chơi rồi!';
-        message.textContent = 'Vali sẵn sàng. Mình lên đường thôi!';
+        title.textContent = 'Đến giờ mình đi Đà Lạt rồi!';
+        message.textContent = 'Nắm tay nhau, mình lên đường thôi!';
         finished = true;
       }
     } else {
       if (finished) {
         countdown.classList.remove('is-departure-time');
-        title.textContent = 'Đà Lạt ơi, đợi mình nhé.';
+        title.textContent = 'Đà Lạt ơi, giữ hộ mình một cuộc hẹn.';
         message.textContent = '';
         finished = false;
       }
