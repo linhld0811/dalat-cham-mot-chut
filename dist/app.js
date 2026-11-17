@@ -36,8 +36,37 @@ const days = {
     ['08:20','Đà Lạt → Hà Nội, mình vẫn cạnh nhau','Tạm biệt thành phố ngàn thông. Chuyến đi khép lại, còn câu chuyện của hai đứa thì vẫn dài thật dài.','','Hẹn Đà Lạt vào một ngày mình lại muốn trốn đi cùng nhau']
   ]}
 };
+const dayVisuals = {
+  arrival: {
+    src:'https://ak-d.tripcdn.com/images/1mc0412000j1l0j3gF1E7_R_960_660_R5_D.jpg',
+    alt:'Be Youth The Villa, căn phòng nhỏ của hai đứa ở Đà Lạt',
+    caption:'Đà Lạt đón mình bằng một căn phòng thật ấm.',
+    position:'center'
+  },
+  one: {
+    src:'assets/dalat-hero.jpg',
+    alt:'Nắng sớm bên rừng thông và mặt hồ Đà Lạt',
+    caption:'Cùng nhau thức dậy giữa nắng sớm Đà Lạt.',
+    position:'center'
+  },
+  two: {
+    src:'assets/tuyen-lam.jpg',
+    alt:'Mặt hồ Tuyền Lâm giữa những đồi thông',
+    caption:'Bình yên là khi mình ở cạnh nhau.',
+    position:'center'
+  },
+  home: {
+    src:'assets/couple.jpeg',
+    alt:'Hai đứa mình bên cánh đồng và những chong chóng đỏ',
+    caption:'Mang Đà Lạt về nhà, mang cả nhau theo cùng.',
+    position:'center 55%'
+  }
+};
 const panel = document.getElementById('day-panel');
 const tabs = [...document.querySelectorAll('[role="tab"]')];
+const dayPhoto = document.getElementById('day-photo');
+const dayPhotoCaption = document.getElementById('day-photo-caption');
+const dayPhotoWrap = document.getElementById('day-photo-wrap');
 const tripContacts = {
   lado: {name:'Lado Taxi sân bay', number:'19001111', display:'1900 1111'},
   villa: {name:'Be Youth The Villa', number:'0868096138', display:'0868 096 138'}
@@ -45,8 +74,22 @@ const tripContacts = {
 function contactLink(key){const c=tripContacts[key];return `<a class="contact-call" href="tel:${c.number}" aria-label="Gọi ${c.name}: ${c.display}"><span class="call-symbol" aria-hidden="true">☎</span><span><span class="call-label">${c.name}</span><strong class="call-number">${c.display}</strong></span></a>`;}
 function dayHTML(day){return `<div class="day-intro"><span class="day-number">${day.number}</span><div><h3>${day.title}</h3><p>${day.subtitle}</p></div></div><div class="timeline">${day.items.map(([time,title,desc,map,tag,contacts=[]])=>`<article class="timeline-item"><time class="timeline-time">${time}</time><div class="timeline-content"><h4>${title}${map?`<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(map)}" target="_blank" rel="noopener noreferrer" aria-label="Mở bản đồ: ${map}">Dẫn đường ↗</a>`:''}</h4><p>${desc}</p>${tag?`<span class="timeline-tag">${tag}</span>`:''}${contacts.length?`<div class="timeline-contacts">${contacts.map(contactLink).join('')}</div>`:''}</div></article>`).join('')}</div>`;}
 let currentDay = 'one';
-function selectDay(key, focus = false){currentDay=key;panel.innerHTML=dayHTML(days[key]);panel.setAttribute('aria-labelledby',`tab-${key}`);tabs.forEach(t=>{const active=t.dataset.day===key;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;if(active&&focus)t.focus();});}
+function updateDayVisual(key){
+  const visual=dayVisuals[key];
+  dayPhoto.src=visual.src;
+  dayPhoto.alt=visual.alt;
+  dayPhoto.style.objectPosition=visual.position;
+  dayPhotoCaption.textContent=visual.caption;
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    dayPhotoWrap.animate([
+      {opacity:.55,transform:'scale(.985)'},
+      {opacity:1,transform:'scale(1)'}
+    ],{duration:320,easing:'ease-out'});
+  }
+}
+function selectDay(key, focus = false){currentDay=key;panel.innerHTML=dayHTML(days[key]);panel.setAttribute('aria-labelledby',`tab-${key}`);updateDayVisual(key);tabs.forEach(t=>{const active=t.dataset.day===key;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;if(active&&focus)t.focus();});}
 tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectDay(tab.dataset.day));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%tabs.length;if(event.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();selectDay(tabs[next].dataset.day,true);}});});
+Object.values(dayVisuals).forEach(({src})=>{const image=new Image();image.src=src;});
 selectDay(currentDay);
 const groups=[
   {title:'Những điều không thể quên',note:'Để cuộc hẹn của hai đứa bắt đầu thật êm.',items:[['id','CCCD / giấy tờ đi máy bay hợp lệ'],['tickets','Vé bay, mã đặt chỗ & đặt phòng'],['wallet','Ví, thẻ ngân hàng & ít tiền mặt'],['phone','Điện thoại & số liên hệ cần thiết'],['license','Giấy phép lái xe'],['daybag','Túi nhỏ đeo chéo / balo đi chơi'],['bottle','Bình nước cá nhân'],['bag','Vali / túi hành lý đúng hạn mức']]},
