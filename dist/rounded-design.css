@@ -26,6 +26,7 @@
 .boarding-pass{border-radius:var(--radius-card)}
 .travel-reminder{border-radius:var(--radius-item)}
 .stay-section{border-radius:var(--radius-card);overflow:hidden}
+.stay-section-heading{grid-column:1/-1;padding:28px 45px 0}
 .packing-status{border-radius:var(--radius-panel)}
 .pack-group{border:1px solid #ffffff29;border-radius:var(--radius-panel);padding:25px 23px;background:#ffffff04}
 .last-note{border:1px solid #ffffff26;border-radius:var(--radius-panel);padding:24px}
@@ -49,6 +50,7 @@ dialog{border-radius:var(--radius-panel)}
   .day-tabs{gap:10px}
   .day-tabs button{padding:16px 13px}
   .itinerary-layout{padding:25px 17px}
+  .stay-section-heading{padding:24px 25px 0}
   .pack-group{padding:25px 22px}
   .last-note{padding:22px 18px}
   .timeline-tag{border-radius:14px}
