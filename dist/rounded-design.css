@@ -14,7 +14,7 @@
 .eyebrow>.tiny-line{display:none}
 .hero .eyebrow{color:#fff;background:#ffffff0c;border-color:#ffffff70;white-space:normal}
 .packing-section .section-heading .eyebrow{color:#fff3df;background:#ffffff08;border-color:#ffffff55}
-.journey-intro>.eyebrow{margin-top:7px;align-self:start;justify-self:start}
+.journey-intro>.eyebrow{margin-top:7px;align-self:start;justify-self:start;max-width:none;white-space:nowrap}
 
 .trip-countdown{border:1px solid #173e3424;border-radius:var(--radius-card)}
 .countdown-value{border-radius:12px}
